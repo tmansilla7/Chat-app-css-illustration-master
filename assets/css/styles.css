@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+:root{
+    --gradient: linear-gradient(to right, #8838FF 0%, #E942FF 100%);
+    --bodyBackground: hsl(252deg 33% 97%);
+    --darkViolet: hsl(271, 36%, 24%);
+    --darkPink: hsl(276, 55%, 52%);
+    --white: hsl(0, 0%, 100%);
+    --gray:hsl(270, 7%, 64%);
+    --black: hsl(0, 0%, 10%);
+    --bodyFont: 'Rubik', sans-serif;
+    --borderRadius: 2rem;
+    --bodySize: 1.6rem;
+    --gap25: 2.5rem;
+    --mg25: 2.5rem;
+    --pd5: 5rem;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    background: var(--bodyBackground) url(../img/rectangle-mobile.png) top left/20rem 50rem no-repeat;
+    font-family: var(--bodyFont);
+    font-size: var(--bodySize);
+    color: var(--white);
+    line-height: 1.4;
+}
+@media (min-width: 768px) { 
+    body{
+        background: var(--bodyBackground) url(../img/rectangle-desktop.png) top left/40rem 65rem no-repeat;
+    }
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+svg{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+.grid{
+    padding: var(--pd5) 0;
+    display: grid;
+    gap: var(--gap25);
+}
+@media (min-width: 768px) { 
+    .grid{
+        height: 100vh;
+        gap: calc(var(--gap25) * 2);
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+.phone{
+    background-color: hsl(270deg, 20%, 96%);
+    border-radius: calc(var(--borderRadius) + 1rem);
+    border: 2rem solid var(--white);
+    max-width: 30rem;
+    margin: 0 auto;
+}
+.header{
+    position: relative;
+    background: var(--gradient);
+    border-radius: var(--borderRadius)var(--borderRadius) 0 0;
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__icon{
+    fill: var(--white);
+}
+.perfil{
+    display: flex;
+    gap: calc(var(--gap25) / 2);
+    align-items: center;
+}
+.img__avatar{
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
+.perfil__name{
+    font-weight: 500;
+}
+.perfil__description{
+    color: hsl(276deg, 100%, 81%);
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: block;
+}
+.header__points{
+    text-align: center;
+    font-size: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.header__circle{
+    background-color: var(--white);
+    border-radius: 2rem;
+    position: absolute;
+    margin: 0 auto;
+    height: 2.5rem;
+    width: 60%;
+    top: -1rem;
+    left: 0;
+    right: 0;
+}
+.chat{
+    display: grid;
+    gap: calc(var(--gap25) - 1.5rem);
+    padding: calc(var(--pd5) - 4rem);
+}
+.chat__message{
+    background-color: rgba(216, 158, 255, 0.2);
+    color: var(--darkPink);
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    padding: .5rem;
+    max-width: 75%;
+}
+.chat__images{
+    display: flex;
+    gap: calc(var(--gap25) / 2);
+    margin-left: auto;
+}
+.chat__img{
+    border-radius: 1.5rem;
+    object-fit: cover;
+    height: 5rem;
+    width: 5rem;
+}
+.chat__send{
+    background-color: var(--white);
+    color: var(--black);
+    margin-left: auto;
+    font-size: 1.2rem;
+    max-width: 85%;
+    padding: .5rem;
+}
+.chat__option{
+    background: var(--gradient);
+    border-radius: .5rem .5rem .5rem .1rem;
+    padding: .5rem;
+    display: flex;
+    gap: var(--gap25);
+    align-items: center;
+    max-width: 90%;
+}
+.chat__circle{
+    background-color: none;
+    border: .1rem solid var(--white);
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.chat__text{
+    font-size: 1.4rem;
+}
+.chat__price{
+    font-weight: 700;
+}
+.form{
+    background-color: var(--white);
+    margin: 0 calc(var(--mg25) - 1.5rem) calc(var(--mg25) - 1.5rem) calc(var(--mg25) - 1.5rem);
+    border-radius: 2rem;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form__input{
+    outline: none;
+    border: none;
+    width: 100%;
+}
+.form__button{
+    background-color: var(--darkViolet);
+    border-radius: 50%;
+    display: flex;
+    padding: .25rem;
+}
+.form__icon{
+    fill: var(--white);
+}
+.content{
+    text-align: center;
+}
+@media (min-width: 768px) { 
+    .content{
+        text-align: left;
+    }
+}
+.content__title{
+    color: var(--darkViolet);
+    margin: 0 0 var(--mg25);
+}
+.content__paragraph{
+    color: var(--gray);
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
